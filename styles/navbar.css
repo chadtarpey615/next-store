@@ -1,0 +1,17 @@
+nav {
+  display: grid;
+  grid: repeat(3, 20em);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+nav > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 15em);
+  justify-content: end;
+  list-style-type: none;
+}
+nav > li {
+  display: grid;
+  grid-template-columns: 15em auto 20em;
+  list-style-type: none;
+}
