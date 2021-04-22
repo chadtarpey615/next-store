@@ -3,3 +3,15 @@
   grid-template-columns: 12fr;
   font-size: 3.5rem;
 }
+
+.input-form {
+  display: grid;
+  grid-template-columns: 12fr;
+  text-align: center;
+}
+
+.input-field {
+  display: grid;
+  width: 80%;
+  justify-content: center;
+}
