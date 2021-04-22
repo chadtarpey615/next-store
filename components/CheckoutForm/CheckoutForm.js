@@ -2,33 +2,25 @@ import React, { useState, useRef } from 'react';
 // import { getStaticProps } from "../../db/index"
 // import { MongoClient } from "mongodb";
 const CheckoutForm = (props) => {
+    const titleInputRef = useRef();
+    const categoryInputRef = useRef();
+    const manyInputRef = useRef();
 
-    const [addItem, setAddItem] = useState({});
 
-    const handleChange = event => {
+    function submitHandler(event) {
         event.preventDefault();
 
-        const { name, value } = event.target;
-        setAddItem({ ...addItem, [name]: value.trim() })
-
-
-
-    }
-
-
-
-    const submitHandler = (event) => {
-        event.preventDefault();
+        const enteredTitle = titleInputRef.current.value;
+        const enteredCategory = categoryInputRef.current.value;
+        const enteredMany = manyInputRef.current.value;
 
         const itemData = {
-            title: addItem.title,
-            category: addItem.category,
-            many: addItem.many
-        }
-        console.log(itemData)
-        props.onAddItem(itemData);
+            title: enteredTitle,
+            category: enteredCategory,
+            many: enteredMany
+        };
 
-
+        props.onAddItem(itemData)
     }
 
 
@@ -36,11 +28,11 @@ const CheckoutForm = (props) => {
         <>
             <form onSubmit={submitHandler}>
                 <label htmlFor="title">Item Title</label>
-                <input name="title" type="text" onChange={handleChange} />
+                <input required id="title" type="text" ref={titleInputRef} />
                 <label htmlFor="category">Item Category</label>
-                <input name="category" type="text" onChange={handleChange} />
+                <input required id="category" type="text" ref={categoryInputRef} />
                 <label htmlFor="many">How Many</label>
-                <input name="many" type="text" onChange={handleChange} />
+                <input required id="many" type="text" ref={manyInputRef} />
                 <div className="form-button">
                     <button>Submit</button>
                 </div>
@@ -51,3 +43,29 @@ const CheckoutForm = (props) => {
 }
 
 export default CheckoutForm;
+
+  // const [addItem, setAddItem] = useState({});
+
+    // const handleChange = event => {
+    //     event.preventDefault();
+
+    //     const { name, value } = event.target;
+    //     setAddItem({ ...addItem, [name]: value.trim() })
+
+
+
+    // }
+
+
+
+    // const submitHandler = (event) => {
+    //     event.preventDefault();
+
+    //     const itemData = {
+    //         title: addItem.title,
+    //         category: addItem.category,
+    //         many: addItem.many
+    //     }
+    //     console.log(itemData)
+    //     props.onAddItem(itemData);
+
