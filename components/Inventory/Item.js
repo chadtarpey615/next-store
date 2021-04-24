@@ -1,10 +1,17 @@
 import React from 'react'
-
+import Items from "./Items";
 const Item = (props) => {
     return (
         <div>
             {props.storeItems.map(item => (
-                <h1>{item.title}</h1>
+                <Items
+                    key={item.id}
+                    title={item.title}
+                    image={item.image}
+                    category={item.category}
+                    many={item.many}
+                    price={item.price}
+                />
             ))}
         </div>
     )
