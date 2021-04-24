@@ -32,19 +32,30 @@ const CheckoutForm = (props) => {
 
     return (
         <>
-            <form onSubmit={submitHandler}>
-                <label htmlFor="title">Item Title</label>
-                <input required id="title" type="text" ref={titleInputRef} />
-                <label htmlFor="category">Item Category</label>
-                <input required id="category" type="text" ref={categoryInputRef} />
-                <label htmlFor="many">How Many</label>
-                <input required id="many" type="text" ref={manyInputRef} />
-                <label htmlFor="image">Image url</label>
-                <input required id="image" type="text" ref={imageInputRef} />
-                <label htmlFor="Price">Price</label>
-                <input required id="price" type="text" ref={priceInputRef} />
+            <form className="input-form" onSubmit={submitHandler}>
+                <div>
+                    <label htmlFor="title">Item Title</label>
+                    <input required id="title" type="text" ref={titleInputRef} />
+                </div>
+
+                <div>
+                    <label htmlFor="category">Item Category</label>
+                    <input required id="category" type="text" ref={categoryInputRef} />
+                </div>
+                <div>
+                    <label htmlFor="many">How Many</label>
+                    <input required id="many" type="text" ref={manyInputRef} />
+                </div>
+                <div>
+                    <label htmlFor="image">Image url</label>
+                    <input required id="image" type="text" ref={imageInputRef} />
+                </div>
+                <div>
+                    <label htmlFor="Price">Price</label>
+                    <input required id="price" type="text" ref={priceInputRef} />
+                </div>
                 <div className="form-button">
-                    <button>Submit</button>
+                    <button className="form-btn">Submit</button>
                 </div>
             </form>
 

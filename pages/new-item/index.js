@@ -18,11 +18,11 @@ export default function index() {
         console.log(data)
     }
     return (
-        <>
+        <div className="main">
             <h1>Check Items In Here</h1>
             <meta name="description" content="Add your own items and create amazing networking opportunities!!!" />
             <CheckoutForm onAddItem={addStoreItem} />
-        </>
+        </div>
     )
 }
 

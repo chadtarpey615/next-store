@@ -15,3 +15,49 @@
   width: 80%;
   justify-content: center;
 }
+
+.input-form,
+input {
+  width: 40%;
+  align-items: center;
+  padding: 4px 0 4px 0;
+  margin: 4px 0 4px 0;
+}
+
+.input-form,
+label {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.form-btn {
+  background-color: rgb(74, 160, 63);
+  width: 22em;
+  height: 4em;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.main {
+  text-align: center;
+  font-size: 2em;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, max-content) / 5em auto 2em;
+  outline-style: dashed;
+}
+
+.card-image,
+img {
+  display: grid;
+  height: 300px;
+  width: 400px;
+}
+
+.card-footer {
+  font-size: 1.5em;
+}

@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.input-form {
+  display: grid;
+}
+
+.main {
+  display: grid;
+  align-items: center;
+}
