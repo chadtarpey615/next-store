@@ -5,6 +5,7 @@ const CheckoutForm = (props) => {
     const titleInputRef = useRef();
     const categoryInputRef = useRef();
     const manyInputRef = useRef();
+    const imageInputRef = useRef();
 
 
     function submitHandler(event) {
@@ -13,11 +14,13 @@ const CheckoutForm = (props) => {
         const enteredTitle = titleInputRef.current.value;
         const enteredCategory = categoryInputRef.current.value;
         const enteredMany = manyInputRef.current.value;
+        const enteredImage = imageInputRef.current.value;
 
         const itemData = {
             title: enteredTitle,
             category: enteredCategory,
-            many: enteredMany
+            many: enteredMany,
+            image: enteredImage,
         };
 
         props.onAddItem(itemData)
@@ -33,6 +36,8 @@ const CheckoutForm = (props) => {
                 <input required id="category" type="text" ref={categoryInputRef} />
                 <label htmlFor="many">How Many</label>
                 <input required id="many" type="text" ref={manyInputRef} />
+                <label htmlFor="image">Image url</label>
+                <input required id="image" type="text" ref={imageInputRef} />
                 <div className="form-button">
                     <button>Submit</button>
                 </div>
