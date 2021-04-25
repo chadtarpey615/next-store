@@ -43,5 +43,16 @@ export async function getStaticProps() {
     revalidate: 1
   }
 }
+export async function storeInventory() {
+  const client = await MongoClient.connect("mongodb+srv://chads:Sony1234@cluster0.06sav.mongodb.net/store?retryWrites=true&w=majority");
+  const db = client.db();
+
+  const storeItems = db.collection("store");
+
+  const items = await storeItems.find().toArray();
+  // setStoreItems(items);
+
+  client.close();
+}
 
 export default Home;

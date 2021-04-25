@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { MongoClient } from "mongodb";
+import React, { useState, useEffect } from 'react';
+import { storeInventory } from "../../pages/index"
 const Items = (props) => {
     const [storeItems, setStoreItems] = useState()
     useEffect(() => {
 
-        storeInventory();
+        console.log(storeInventory);
     }, [])
 
-    async function storeInventory() {
-        const client = await MongoClient.connect("mongodb+srv://chads:Sony1234@cluster0.06sav.mongodb.net/store?retryWrites=true&w=majority");
-        const db = client.db();
 
-        const storeItems = db.collection("store");
-
-        const items = await storeItems.find().toArray();
-        setStoreItems(items);
-    }
     const removeHandler = (id) => {
         console.log(id)
     }
