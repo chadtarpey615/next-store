@@ -32,6 +32,7 @@ export async function getStaticProps() {
   return {
     props: {
       storeItems: storeItems.map(item => ({
+        id: item._id.toString(),
         title: item.title,
         image: item.image,
         category: item.category,
