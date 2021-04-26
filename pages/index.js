@@ -43,16 +43,29 @@ export async function getStaticProps() {
     revalidate: 1
   }
 }
-export async function storeInventory() {
-  const client = await MongoClient.connect("mongodb+srv://chads:Sony1234@cluster0.06sav.mongodb.net/store?retryWrites=true&w=majority");
-  const db = client.db();
+// export async function storeInventory() {
+//   const client = await MongoClient.connect("mongodb+srv://chads:Sony1234@cluster0.06sav.mongodb.net/store?retryWrites=true&w=majority");
+//   const db = client.db();
 
-  const storeItems = db.collection("store");
+//   const storeItems = db.collection("store");
 
-  const items = await storeItems.find().toArray();
-  // setStoreItems(items);
+//   const items = await storeItems.find().toArray();
+//   // setStoreItems(items);
 
-  client.close();
-}
+//   client.close();
+//   return {
+//     props: {
+//       storeItems: storeItems.map(item => ({
+//         id: item._id.toString(),
+//         title: item.title,
+//         image: item.image,
+//         category: item.category,
+//         many: item.many,
+//         price: item.price
+//       }))
+//     },
+//     revalidate: 1
+//   }
+// }
 
 export default Home;

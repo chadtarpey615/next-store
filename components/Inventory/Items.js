@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { storeInventory } from "../../pages/index"
+// import { storeInventory } from "../../pages/index"
 const Items = (props) => {
-    const [storeItems, setStoreItems] = useState()
+    const [storeItems, setStoreItems] = useState([])
     useEffect(() => {
 
-        console.log(storeInventory);
+        setStoreItems(props.storeItems)
     }, [])
 
 
     const removeHandler = (id) => {
-        console.log(id)
+
+        // console.log(storeItems)
+
+
+        storeItems.filter(item => {
+            item.id !== storeItems.id
+            setStoreItems(...items, storeItems)
+        })
+
+
+
+
+
     }
+
 
     return (
         <div className="card">

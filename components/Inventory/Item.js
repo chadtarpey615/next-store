@@ -5,6 +5,7 @@ const Item = (props) => {
         <div>
             {props.storeItems.map(item => (
                 <Items
+                    storeItems={props.storeItems}
                     key={item.id}
                     id={item.id}
                     title={item.title}
