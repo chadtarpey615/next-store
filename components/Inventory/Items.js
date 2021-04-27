@@ -4,7 +4,8 @@ const Items = (props) => {
     const [storeItems, setStoreItems] = useState([])
     useEffect(() => {
 
-        setStoreItems(props.storeItems)
+        setStoreItems(props.storeItems);
+        console.log(storeItems)
     }, [])
 
 
@@ -15,8 +16,10 @@ const Items = (props) => {
 
         storeItems.filter(item => {
             item.id !== storeItems.id
-            setStoreItems(...items, storeItems)
-        })
+
+        });
+        setStoreItems(storeItems)
+        console.log(storeItems)
 
 
 

@@ -16,6 +16,12 @@ async function handler(req, res) {
 
         res.status(201).json({ message: "Store updated" });
     }
+
+    if (req.method === "DELETE") {
+        const dataId = req.body.id;
+        console.log("hit")
+
+    }
 }
 
 
